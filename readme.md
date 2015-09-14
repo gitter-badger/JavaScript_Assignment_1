@@ -1,5 +1,6 @@
 # JavaScript Questions 
-
+<br/>
+<a href="http://shardool.github.io/JavaScript_Assignment_1/">Click Here</a> For Answers
 ###Chapter 01 - Basics of JavaScript
 <ol>
 <li>	What are some cross-browser issues that affect JavaScript code?</li>
