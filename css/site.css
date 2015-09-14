@@ -1,0 +1,36 @@
+/* line 1, ../sass/site.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../sass/site.scss */
+body {
+  font: 1em verdana;
+  background-color: #ccc;
+  padding: 50px;
+}
+
+/* line 12, ../sass/site.scss */
+h1 {
+  font: bold 2em verdana;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+/* line 18, ../sass/site.scss */
+.question {
+  margin-top: 5px;
+  line-height: 1.5em;
+  background: #abc;
+}
+
+/* line 24, ../sass/site.scss */
+summary {
+  outline: none;
+}
+
+/* line 28, ../sass/site.scss */
+article {
+  margin-top: 5px;
+}

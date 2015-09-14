@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 1em verdana;
+    background-color: #ccc;
+    padding: 50px;
+}
+
+h1 {
+    font: bold 2em verdana;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.question {
+    margin-top: 5px;
+    line-height: 1.5em;
+    background: #abc;
+}
+
+summary {
+    outline: none;
+}
+
+article {
+    margin-top: 5px;
+}
