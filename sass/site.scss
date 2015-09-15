@@ -8,8 +8,11 @@ body {
     background-color: #ccc;
     padding: 50px;
 }
-
+h3{
+margin:5%;
+}
 h1 {
+    margin:3%;
     font: bold 2em verdana;
     border-bottom: 1px solid #000;
     text-align: center;
@@ -26,5 +29,11 @@ summary {
 }
 
 article {
-    margin-top: 5px;
+    margin-top: 5%;
+}
+ul{
+    list-style:none;
+}
+ol{
+    padding-left:5%;
 }

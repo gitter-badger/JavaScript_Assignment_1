@@ -28,19 +28,30 @@
     <article> What tools are available to deal with these issues?
         <details class="question">
             <summary>Answer:</summary>
-            Using Frameworks 
+            It serves us well in general to follow these guidelines to get around these cross-browser issues
+            <ul>
+                <li>Don't leave anything for the browser to make assumptions. Instead be explicit wherever possible. Ex: include the DOCTYPE for every webpage</li>
+                <li> Ensure the HTML document is valid and is wellformed</li>
+                <li>Rely on popular JavaScript libraries and CSS frameworks that normalize the cross-browser idiosyncrasies.</li>
+                <li>Use popular unit-testing tools such as Jasmine, mocha-chai to run tests in all the browsers using a testrunner such as Karma</li>
+            </ul>
         </details>
     </article>
     <article> What considerations should we take when determining what browsers to support?
         <details class="question">
             <summary>Answer:</summary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nam ea, saepe atque. Dolorum delectus harum, aliquam iste, magnam vero.
+            Although various strategies exist, the one that Yahoo follows seems to be more popular. It involves putting together a matrix which Yahoo calls the "graded browser matrix" where the browsers are along one axis and the platforms are along the second axis. We then need to grade them depending on the project requirements
         </details>
     </article>
     <article> What sort of testing should we do on JavaScript code before deployment?
         <details class="question">
             <summary>Answer:</summary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nam ea, saepe atque. Dolorum delectus harum, aliquam iste, magnam vero.
+            To begin with, the code we write should be lint-free (JSHint) and the Lint reporter should always be pass. Next, the test cases we write should posses three main characteristics, namely
+                <ol>
+                    <li>Repeatability</li>
+                    <li>Simplicity</li>
+                    <li>Isolation/Independent</li>
+                </ol>
         </details>
     </article>
 

@@ -11,26 +11,42 @@ body {
   padding: 50px;
 }
 
-/* line 12, ../sass/site.scss */
+/* line 11, ../sass/site.scss */
+h3 {
+  margin: 5%;
+}
+
+/* line 14, ../sass/site.scss */
 h1 {
+  margin: 3%;
   font: bold 2em verdana;
   border-bottom: 1px solid #000;
   text-align: center;
 }
 
-/* line 18, ../sass/site.scss */
+/* line 21, ../sass/site.scss */
 .question {
   margin-top: 5px;
   line-height: 1.5em;
   background: #abc;
 }
 
-/* line 24, ../sass/site.scss */
+/* line 27, ../sass/site.scss */
 summary {
   outline: none;
 }
 
-/* line 28, ../sass/site.scss */
+/* line 31, ../sass/site.scss */
 article {
-  margin-top: 5px;
+  margin-top: 5%;
+}
+
+/* line 34, ../sass/site.scss */
+ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/site.scss */
+ol {
+  padding-left: 5%;
 }
