@@ -47,16 +47,16 @@
         <details class="question">
             <summary>Answer:</summary>
             To begin with, the code we write should be lint-free (JSHint) and the Lint reporter should always report zero violations. Next, the test cases we write should posses three main characteristics, namely
-                <ol>
-                    <li>Repeatability</li>
-                    <li>Simplicity</li>
-                    <li>Isolation/Independent</li>
-                </ol>
-                There are two approaches to testing the code we write.
-                <ol>
-                    <li>Constructive</li>
-                    <li>Deconstructive</li>
-                </ol>
+            <ol>
+                <li>Repeatability</li>
+                <li>Simplicity</li>
+                <li>Isolation/Independent</li>
+            </ol>
+            There are two approaches to testing the code we write.
+            <ol>
+                <li>Constructive</li>
+                <li>Deconstructive</li>
+            </ol>
         </details>
     </article>
 
@@ -66,33 +66,65 @@
     <article> What debug tools can we use for JavaScript?
         <details class="question">
             <summary>Answer:</summary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nam ea, saepe atque. Dolorum delectus harum, aliquam iste, magnam vero.
+            We can use google chrome developer tools to place break points and perform stepwise execution to debug JavaScript. Also we could use the console.log() method to log to the console.
         </details>
     </article>
     <article> Explain how deconstructive and constructive test cases work.
         <details class="question">
             <summary>Answer:</summary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nam ea, saepe atque. Dolorum delectus harum, aliquam iste, magnam vero.
+            <strong>Deconstructive</strong> test cases are composed by isolating just the code that constitute the system-under-test and eleminating the rest of the code that do not participate in the test cases. <strong>Constructive</strong> test cases on the other hand are put together by starting from a known good reduced case and go on adding code to it until a bug shows up.
         </details>
     </article>
     <article> What is the purpose of a testing framework?
         <details class="question">
             <summary>Answer:</summary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nam ea, saepe atque. Dolorum delectus harum, aliquam iste, magnam vero.
+            A good testing framework enables us to organize our tests by grouping them together, allow us to see a dashboard of tests that have passed and the ones that need fixing. When it comes to JavaScript Unit-Testing frameworks aimed at the DOM API, we need a test-framework that can
+            <ol>
+                <li>simulate browser behavior such as mouse-hover, clicks, drag and drop</li>
+                <li>allow us to control the test runner interactively</li>
+                <li>give us the ability to filter what tests are to be executed</li>
+                <li>provide a way to test asynchronous operations by grouping all those that depend on the same asynchronous operation</li>
+            </ol>
         </details>
     </article>
     <article> Name a few testing frameworks for JavaScript.
         <details class="question">
             <summary>Answer:</summary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nam ea, saepe atque. Dolorum delectus harum, aliquam iste, magnam vero.
+            following are some of the popular JavaScript Testing Frameworks
+            <ul>
+                <li>Jasmine</li>
+                <li>mocha with chai</li>
+                <li>QUnit</li>
+                <li>JsUnit</li>
+            </ul>
         </details>
     </article>
 
 
     <h3> Chapter 04 - Wielding Functions</h3>
 
-    <article> Explain how functions work in JavaScript</article>
-    <article> How are they declared?</article>
+    <article> Explain how functions work in JavaScript
+        <details class="question">
+            <summary>Answer:</summary>
+            <li>JavaScript functions can be invoked in one of four ways.
+                <ol>
+                    <li>as a function</li>
+                    <li>as a method on an object</li>
+                    <li>as an object constructor</li>
+                    <li>as apply/call </li>
+                </ol>
+            </li>
+            <li>Every function is implicitly provided with two additional parameters, namely "this" and "arguments". The "this" parameter is influenced by on which of the above invokation patterns is at play </li>
+            <li>Additionally, JavaScript functions are basically objects (mutable key-value pairs) and are instances of the core JavaScript object named "Function" Therefore every function has a hidden link to "Function.prototype". Which means that anything attached to the Function.prototype instantly becomes available to all instances the functions.
+            </li>
+            <li>Every function has a property called "prototype" which is an object consisting of a property called "construct" whose value is the function itself.</li>
+            <li>functions can be stored in variables, objects, arrays, they can be passed to other functions as arguments and returned from other functions as values.</li>
+        </details>
+    </article>
+    <article> How are they declared?
+        <summary>Answer:</summary>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi aspernatur consectetur doloremque quas iure dolor quae labore illo error, earum officiis provident culpa dolorum dolore adipisci facere eaque, pariatur. Maiores reiciendis asperiores nemo molestiae dignissimos, autem, quae dolorum esse eaque.
+    </article>
     <article> Where can they be used?</article>
     <article> How do we call them?</article>
     <article> Are there any special characteristics that differentiate them from other programming languages’ functions?</article>
