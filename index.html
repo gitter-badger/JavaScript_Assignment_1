@@ -46,13 +46,18 @@
     <article> What sort of testing should we do on JavaScript code before deployment?
         <details class="question">
             <summary>Answer:</summary>
-            To begin with, the code we write should be lint-free (JSHint) and the Lint reporter should always report zero violations. Next, the test cases we write should posses three main characteristics, namely
+            Before deploying the JavaScript code, we should be certain that the test cases we author all pass and posses the three main characteristics, namely
             <ol>
                 <li>Repeatability</li>
                 <li>Simplicity</li>
                 <li>Isolation/Independent</li>
             </ol>
-            There are two approaches to testing the code we write.
+            Types of testing would include
+            <ul>
+                <li>functionality</li>
+                <li>performance</li>
+                <li>compatibility</li>
+            </ul> , There are two approaches to testing the code we write when we bump into a bug and we want to debug it.
             <ol>
                 <li>Constructive</li>
                 <li>Deconstructive</li>
@@ -100,8 +105,7 @@
         </details>
     </article>
 
-
-    <h3> Chapter 04 - Wielding Functions</h3>
+    <h3> Chapter 03 -  Functions</h3>
 
     <article> Explain how functions work in JavaScript
         <details class="question">
@@ -123,7 +127,32 @@
     </article>
     <article> How are they declared?
         <summary>Answer:</summary>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi aspernatur consectetur doloremque quas iure dolor quae labore illo error, earum officiis provident culpa dolorum dolore adipisci facere eaque, pariatur. Maiores reiciendis asperiores nemo molestiae dignissimos, autem, quae dolorum esse eaque.
+        We could use one of two syntaxes to declare JavaScript functions.
+        <ul>
+            <li>
+                <strong>function declaration/statement syntax</strong> where the function declaration is hoisted to the top of the function scope.
+                <details><summary>code</summary>
+                <div class="code">example:
+                
+    function bar(){
+        //code here
+    }
+               </div></details>
+            </li>
+            <li><strong>function expression sytax(the preferred way)</strong> where the function declaration is <strong>not</strong> hoisted and can only be called <strong>after</strong> the function has been defined.
+                <details><summary>code</summary>        <div class="code">example:
+                
+    var bar = function bar(){
+        //code here
+    }
+              OR
+    
+    var bar = function (){
+        //code here
+    }
+               </div></details>
+            </li>
+        </ul>
     </article>
     <article> Where can they be used?</article>
     <article> How do we call them?</article>

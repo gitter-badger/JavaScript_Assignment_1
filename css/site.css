@@ -43,10 +43,20 @@ article {
 
 /* line 34, ../sass/site.scss */
 ul {
-  list-style: none;
+  list-style: square;
+  padding-left: 5%;
 }
 
-/* line 37, ../sass/site.scss */
+/* line 38, ../sass/site.scss */
 ol {
   padding-left: 5%;
+}
+
+/* line 41, ../sass/site.scss */
+.code {
+  font: normal normal 1em/1em monospace;
+  white-space: pre-line;
+  text-align: left;
+  background: #abc;
+  width: 30%;
 }

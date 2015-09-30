@@ -32,8 +32,16 @@ article {
     margin-top: 5%;
 }
 ul{
-    list-style:none;
+    list-style:square;
+    padding-left:5%;
 }
 ol{
     padding-left:5%;
+}
+.code{
+    font:normal normal 1em/1em monospace;
+    white-space:pre-line;
+    text-align:left;
+    background:#abc;
+    width:30%;
 }
