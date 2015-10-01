@@ -155,9 +155,45 @@
             </li>
         </ul></details>
     </article>
-    <article> Where can they be used?</article>
-    <article> How do we call them?</article>
-    <article> Are there any special characteristics that differentiate them from other programming languages’ functions?</article>
+    <article> Where can they be used?
+        <details class="question">
+            <summary>Answer:</summary>
+            <ul>
+              <li>functions can be used to create objects when invoked with a new keyword</li>
+              <li>functions can be used to implement callbacks that could be either synchronous or asynchronous</li>
+               <li>A function can be executed within the context of an object as a method</li>
+               <li>functions that are in the outermost scope are actually methods on the global object. In the case of browser, the functions are methods on the global "window" object. However, they can be invoked without referencing the global object.</li>
+                <li>functions can be stored in variables, objects, arrays.</li>
+                <li>They can be passed to other functions as arguments and can be returned from functions.</li>
+                            </ul>
+             
+        </details>
+    </article>
+    <article> How do we call them?
+        <details class="question">
+            <summary>Answer:</summary>
+            There are several ways of calling a function
+            <ul>
+                <li>As a regular function. example: add(3,4);</li>
+                <li>As a method on an object.example : myObj.add(3,4)</li>
+                <li>As a constructor. example: var cal = new Calculater();</li>
+                <li>
+                    With a Apply/Call invocation (which allows setting the context for the method).example
+                    add.call(MyObj,3,5); or add.apply(MyObj,[3,5]);
+                </li>
+            </ul>
+        </details>
+    </article>
+    <article> Are there any special characteristics that differentiate them from other programming languages’ functions?
+        <details class="question">
+            <summary>Answer:</summary>
+            <ul>
+                <li>JavaScript functions are objects. Which means that they can in-turn have methods and properties. Which makes it possible to memoize previously computed expensive operations.</li>
+                <li></li>
+                <li></li>
+            </ul>
+        </details>
+    </article>
     <article> How are parameters handled by functions?</article>
     <article> Can we define var-args functions?</article>
     <article> How can we define a variable’s type?</article>
