@@ -230,10 +230,14 @@
     <article> Describe briefly how JavaScript code is executed on the browser.
         <details class="question">
             <summary>Answer:</summary>
-            
+            Within the browser, the JavaScript code is interpreted and executed by the JavaScript Runtime Engine. Although we can author and execute JavaScript code without involving the DOM API, it would be meaningless to do so if we don't. When coding against the DOM API, the code we author is hooked in as eventhandlers. These eventhandlers are nothing but callback functions that are queued in on the "eventloop" (that runs on a single-thread) and executed in a first-come-first-served basis. The thread that registers events on the "eventloop" is separate from the one on which the eventloop itself runs.
         </details>
     </article>
-    <article> What is a callback?</article>
+    <article> What is a callback?
+        <details class="question">
+            <summary>Answer:</summary>
+        </details>
+    </article>
     <article> How does scoping work in JavaScript?</article>
     <article> What is Hoisting?</article>
     <article> How does the context of a function work in JavaScript?</article>
