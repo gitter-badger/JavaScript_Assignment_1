@@ -181,6 +181,10 @@
                     With a Apply/Call invocation (which allows setting the context for the method).example
                     add.call(MyObj,3,5); or add.apply(MyObj,[3,5]);
                 </li>
+                 <li>a function may also be invocked as follos
+                     var bar = function(a,b){ return a + b;};
+                     bar.prototype.constructor();
+                 </li>
             </ul>
         </details>
     </article>
@@ -188,18 +192,47 @@
         <details class="question">
             <summary>Answer:</summary>
             <ul>
-                <li>JavaScript functions are objects. Which means that they can in-turn have methods and properties. Which makes it possible to memoize previously computed expensive operations.</li>
-                <li></li>
-                <li></li>
+                <li>JavaScript functions are objects. Which means that they can in-turn have methods and properties. Which makes it possible to memoize previously computed expensive operations, thereby making it possible to author performant code</li>
+                <li>JavaScript functions have the ability to dynamically bind the execution context with object using "apply" and "call" pattern of invocation.</li>
+                <li>By default, all JavaScript functions receive two additional bonus parameters, namely "this" and "arugments". The arguments parameter makes it possible to </li>
             </ul>
         </details>
     </article>
-    <article> How are parameters handled by functions?</article>
-    <article> Can we define var-args functions?</article>
-    <article> How can we define a variable’s type?</article>
-    <article> How are variables declared?</article>
-    <article> What is the purpose of the var keyword?</article>
-    <article> Describe briefly how JavaScript code is executed on the browser.</article>
+    <article> How are parameters handled by functions?
+        <details class="question">
+            <summary>Answer:</summary>
+            If a function is called by passing in more arguments than it can take, the extra arguments are ignored and if a function is called with fewer arguments than it takes, the called function proceeds with the execution by sticking in "undefined" for those parameters that didn't receive any value.
+        </details>
+    </article>
+    <article> Can we define var-args functions?
+        <details class="question">
+            <summary>Answer:</summary>
+            We can achieve this by leveraging the implicitly passed bonus parameter called "arguments". It is basically an array-like object which holds the parameters passed to it as arguments from the calling function.
+        </details>         
+    </article>
+    <article> How can we define a variable’s type?
+        <details class="question">
+            <summary>Answer:</summary>
+            As JavaScript is a dynamically-typed language, the variable's type is determined by the type of value we assign to it        </details>
+    </article>
+    <article> How are variables declared?
+        <details class="question">
+            <summary>Answer:</summary>
+            variables are declared with a "var" keyword;
+        </details>
+    </article>
+    <article> What is the purpose of the var keyword?
+        <details class="question">
+            <summary>Answer:</summary>
+            "var" keyword is used to declare a variable. In ES5, the use of var keyword for a variable inside a function, influences it's scope. When "use strict" is not used, forgetting to use the var keyword for a variable intended as a local variable will cause to silently be scoped to its outer namespace.
+        </details>
+    </article>
+    <article> Describe briefly how JavaScript code is executed on the browser.
+        <details class="question">
+            <summary>Answer:</summary>
+            
+        </details>
+    </article>
     <article> What is a callback?</article>
     <article> How does scoping work in JavaScript?</article>
     <article> What is Hoisting?</article>
