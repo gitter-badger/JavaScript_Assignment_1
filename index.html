@@ -410,15 +410,37 @@ Only the code that follows this function expression can call bar(). Any code bef
     <article> What use do we have for having functions with properties like objects?
         <details class="question">
             <summary>Answer:</summary>
+            functions with properties like objects make it possible to have such concepts as "memoization" which is a performance optimization opportunity to cache the previously computed expensive operations.
         </details>
     </article>
-    <article> What sort of methods are attached to a function?</article>
-    <article> What is memoization?</article>
+    <article> What sort of methods are attached to a function?
+        <details class="question">
+            <summary>Answer:</summary>
+            By default, the methods like <strong>apply()</strong> and <strong>call()</strong> are attached to JavaScript functions.
+        </details>
+    </article>
+    <article> What is memoization?
+        <details class="question">
+            <summary>Answer:</summary>
+            <strong>Memoization</strong> is a powerful feature that enables authoring performant functions that can remember the previously computed expensive operations.
+        </details>
+    </article>
     <article> How can it be implemented in JavaScript?</article>
     <article> How can changing the context of a function be useful?</article>
-    <article> Is it possible to overload functions in JavaScript? If so, how?</article>
-    <article> Is it possible to overwrite functions is JavaScript? If so, how?</article>
-    <article> How can it be determined if a variable holds a function?</article>
+    <article> Is it possible to overload functions in JavaScript? If so, how?
+        <details class="question">
+            <summary>Answer:</summary>
+            Although JavaScript natively doesn't support function overloading, we can simulate it 
+        </details>
+    </article>
+    <article> Is it possible to overwrite functions is JavaScript? If so, how?
+    </article>
+    <article> How can it be determined if a variable holds a function?
+        <details class="question">
+            <summary>Answer:</summary>
+            by inspecting the variable with the <strong>typeof</strong> operator
+        </details>
+    </article>
 
 
     <h3>  Chapter 05 - Closures</h3>
