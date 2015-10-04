@@ -194,7 +194,7 @@
             <ul>
                 <li>JavaScript functions are objects. Which means that they can in-turn have methods and properties. Which makes it possible to memoize previously computed expensive operations, thereby making it possible to author performant code</li>
                 <li>JavaScript functions have the ability to dynamically bind the execution context with object using "apply" and "call" pattern of invocation.</li>
-                <li>By default, all JavaScript functions receive two additional bonus parameters, namely "this" and "arugments". The arguments parameter makes it possible to </li>
+                <li>By default, all JavaScript functions receive two additional bonus parameters, namely "this" and "arugments". The arguments parameter makes it possible to turn the function into one that can accept var-args</li>
             </ul>
         </details>
     </article>
@@ -230,34 +230,188 @@
     <article> Describe briefly how JavaScript code is executed on the browser.
         <details class="question">
             <summary>Answer:</summary>
-            Within the browser, the JavaScript code is interpreted and executed by the JavaScript Runtime Engine. Although we can author and execute JavaScript code without involving the DOM API, it would be meaningless to do so if we don't. When coding against the DOM API, the code we author is hooked in as eventhandlers. These eventhandlers are nothing but callback functions that are queued in on the "eventloop" (that runs on a single-thread) and executed in a first-come-first-served basis. The thread that registers events on the "eventloop" is separate from the one on which the eventloop itself runs.
+            Within the browser, the JavaScript code is interpreted and executed by the JavaScript Runtime Engine. Although we can author and execute JavaScript code without involving the DOM API, it would be meaningless to do so as we most certainly would want our code to work with the DOM. When coding against the DOM API, the code we author is hooked in as eventhandlers. These eventhandlers are nothing but callback functions that are queued in on the "eventloop" (that runs on a single-thread) and executed in a first-come-first-served basis like any good queues would. The thread that registers events on the "eventloop" is separate from the one on which the eventloop itself runs.
         </details>
     </article>
     <article> What is a callback?
         <details class="question">
             <summary>Answer:</summary>
+            To my mind, a JavaScript callback is what C programming langauge calls "function pointer" and C# calls a "delegate". It is basically a function that gets executed at a later time when it's turn matures on the eventloop queue (asynchronous callback) or is simply executed by some other code (synchronous callback). We can't tell if a callback in question is synchronous or asynchronous until we consult the API documentation.
+<div class="code">example of syncrhonous callback;
+var bar = function(){
+    return baz(function(msg){
+        console.log(msg + ' Shardul');
+    });
+};
+var baz = function(cb){
+    return cb('Ola');
+};
+      
+/*Another simple example of a synchronous callback would be Array.sort()*/
+      
+var myArray = [23,44,10,9,5,20];
+myArray.sort(function(a,b){
+    return a - b;
+});
+       </div>
         </details>
     </article>
-    <article> How does scoping work in JavaScript?</article>
-    <article> What is Hoisting?</article>
-    <article> How does the context of a function work in JavaScript?</article>
-    <article> Is it possible to alter it? If so, how?</article>
-    <article> What happens when a function is called using the new keyword?</article>
-    <article> Explain how the this keyword works in JavaScript.</article>
-    <article> How can the return type of a function be specified?</article>
-    <article> What happens if there is no return statement in a function?</article>
-    <article> What do the apply() and call() methods do? What is the difference? </article>
+    <article> How does scoping work in JavaScript?
+        <details class="question">
+            <summary>Answer:</summary>
+            In JavaScript, the code is always scoped to "function" and not "block". The variables that are declared (with a var keyword) within a  function context stay local to it and are inaccessible outside. Skipping to declare it within the function (with a var keyword) will cause it to be implicitly considered as a global variable.It is thus a good practice to always include 'use strict'; as the first line in every top-level function to enforce declaring local variables with a var keyword. Failing to declare it with a var keyword will cause it to error out (with an uncaught ReferenceError), unless the variable is declared in the outer scope.
+        </details>
+    </article>
+    <article> What is Hoisting?
+        <details class="question">
+            <summary>Answer:</summary>
+            The variable declaration in JavaScript is subject to "hoisting" which simply means, all declarations are moved to the top of the function by the interpreter. When it comes to functions, the function <strong>definitions</strong> (also known as statements) are hoisted to the top of the function and not function <strong>expressions</strong>
+        </details>
+    </article>
+    <article> How does the context of a function work in JavaScript?
+        <details class="question">
+            <summary>Answer:</summary>
+            The <strong>context</strong> of a JavaScript function is nothing but the object on which the function will be attached to as a <strong>method</strong> and when invoked, will behave like a any other method on that object.
+        </details>
+    </article>
+    <article> Is it possible to alter it? If so, how?
+        <details class="question">
+            <summary>Answer:</summary>
+            Yes it is. We can do so using either apply or call methods that exist on every function, like so
+            <div class="code">
+var setName = function(fn,ln){
+    this.firstName = fn;
+    this.lastName = ln;
+};            
+var Person = {};
+setName.call(Person,'Shardul','Ghanti'); // or setName.apply(Person,['Shardul','Ghanti']);
+console.log(Person.firstName + ' ' + Person.lastName);           
+                   
+            </div>
+        </details>
+    </article>
+    <article> What happens when a function is called using the new keyword?
+        <details class="question">
+            <summary>Answer:</summary>
+            When a JavaScript function is called with a new keyword,the function is executed as an object constructor and a new object is created on the heap. If there are properties and methods attached to it's prototype,they become available to this new object created. 
+        </details>
+    </article>
+    <article> Explain how the this keyword works in JavaScript.
+        <details class="question">
+            <summary>Answer:</summary>
+            the <strong>this</strong> keyword refers to the execution context of the function. The execution context of a function is influenced by how a function is invoked.
+            <table>
+                <tr>
+                    <th>S.No</th>
+                    <th>Invokation Type</th>
+                    <th>'this keyword'</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>function</td>
+                    <td>'this' refers to the global object.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>method</td>
+                    <td>'this' refers to the object, the method is called on.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>constructor</td>
+                    <td>'this' refers to the new object being created.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>apply/call</td>
+                    <td>'this' refers to the object passed in as the first parameter.</td>
+                </tr>
+            </table>
+        </details>
+    </article>
+    <article> How can the return type of a function be specified?
+        <details class="question">
+            <summary>Answer:</summary>
+            The return type of a function is determined by what we choose to return from a function. We can return a primitive type, an object literal or a function.
+        </details>
+    </article>
+    <article> What happens if there is no return statement in a function?
+        <details class="question">
+            <summary>Answer:</summary>
+            if a function has no return type, it returns <strong>undefined</strong> by default.
+        </details>
+    </article>
+    <article> What do the apply() and call() methods do? What is the difference? 
+        <details class="question">
+            <summary>Answer:</summary>
+            The <strong>apply()</strong>and <strong>call()</strong> methods are used to set the execution context of the function by passing in the object reference as the first parameter.
+        </details>
+    </article>
 
 
     <h3> Chapter 04 - Wielding Functions</h3>
 
-    <article> What are anonymous functions?</article>
-    <article> Under what circumstances would they be needed?</article>
-    <article> How do we call anonymous functions?</article>
-    <article> What is recursion?</article>
-    <article> What are the defining features of recursion?</article>
-    <article> Name a few uses of recursion.</article>
-    <article> What use do we have for having functions with properties like objects?</article>
+    <article> What are anonymous functions?
+        <details class="question">
+            <summary>Answer:</summary>
+            Anonymous functions in JavaScript are functions without a name.
+            example:
+            <div class="code">
+example:
+var bar = function(){};
+console.log(bar.name); // displays empty string ""
+
+            </div>
+        </details>
+    </article>
+    <article> Under what circumstances would they be needed?
+        <details class="question">
+            <summary>Answer:</summary>
+            Although anonymous functions have no performance benefits over the the named-functions, they make it convenient while defining functions expressions and callbacks. 
+        </details>
+    </article>
+    <article> How do we call the anonymous functions?
+        <details class="question">
+            <summary>Answer:</summary>
+             Anonymous functions are convenient as callbacks. Also, an anonymous function can be used in function expression.
+             <div class="code">
+example:
+var bar = function(){};
+Only the code that follows this function expression can call bar(). Any code before this expression will not be able to call it.            
+             </div>
+        </details>
+    </article>
+    <article> What is recursion?
+        <details class="question">
+            <summary>Answer:</summary>
+            Recursion is a function that calls itself, either directly or indirectly. A recursive function should ideally approach to a condition that will cause it to start returning in order to avoid running into stack overflow situation.
+        </details>
+    </article>
+    <article> What are the defining features of recursion?
+        <details class="question">
+            <summary>Answer:</summary>
+            <ul>
+            <li>Reference to self</li>
+            <li>Convergence towards termination</li>
+        </ul>
+        </details>
+    </article>
+    <article> Name a few uses of recursion.
+        <details class="question">
+            <summary>Answer:</summary>
+            Following are some of the popular uses-cases for a recursive function.
+            <ul>
+                <li>walk the DOM tree</li>
+                <li>such mathematical computations as factorial of a number</li>
+                <li>check the palidromicity of a string</li>
+            </ul>
+        </details>
+    </article>
+    <article> What use do we have for having functions with properties like objects?
+        <details class="question">
+            <summary>Answer:</summary>
+        </details>
+    </article>
     <article> What sort of methods are attached to a function?</article>
     <article> What is memoization?</article>
     <article> How can it be implemented in JavaScript?</article>

@@ -60,3 +60,13 @@ ol {
   background: pink;
   width: 30%;
 }
+
+/* line 48, ../sass/site.scss */
+table {
+  border-collapse: collapse;
+}
+
+/* line 51, ../sass/site.scss */
+td, th {
+  border: 1px solid black;
+}
