@@ -1,4 +1,6 @@
 # JavaScript Questions 
+
+[![Join the chat at https://gitter.im/shardool/JavaScript_Assignment_1](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shardool/JavaScript_Assignment_1?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <br/>
 <a href="http://shardool.github.io/JavaScript_Assignment_1/">Click Here</a> For Answers
 ###Chapter 01 - Basics of JavaScript
